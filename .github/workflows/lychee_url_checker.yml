@@ -27,11 +27,6 @@ jobs:
       - name: Lychee URL checker
         uses: lycheeverse/lychee-action@v1.6.1
         with:
-          # fail the action on broken links
-          fail: true
-        env:
-          # to be used in case rate limits are surpassed
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           # arguments with file types to check
           args: >-
             --cache
@@ -46,3 +41,8 @@ jobs:
             './**/*.md'
             './**/*.py'
             './**/*.ipynb'
+          # fail the action on broken links
+          fail: true
+        env:
+          # to be used in case rate limits are surpassed
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
